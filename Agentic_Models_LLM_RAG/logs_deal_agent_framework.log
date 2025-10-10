@@ -1,0 +1,99 @@
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [44m[37m[Agent Framework] Initializing Agent Framework[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is initializing[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[36m[Scanner Agent] Scanner Agent is initializing[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[36m[Scanner Agent] Scanner Agent is ready[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Initializing Ensemble Agent[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is initializing - connecting to modal[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is ready[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Initializing Frontier Agent[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is setting up with OpenAI[0m
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] Use pytorch device_name: cpu
+[2025-10-09 19:41:37 -0700] [Agents] [INFO] Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2025-10-09 19:41:38 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is ready[0m
+[2025-10-09 19:41:38 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is initializing[0m
+[2025-10-09 19:41:38 -0700] [Agents] [INFO] Use pytorch device_name: cpu
+[2025-10-09 19:41:38 -0700] [Agents] [INFO] Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is ready[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Ensemble Agent is ready[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[37m[Messaging Agent] Messaging Agent is initializing[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[37m[Messaging Agent] Messaging Agent has initialized Pushover[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is ready[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [44m[37m[Agent Framework] Agent Framework is ready[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] Kicking off Planning Agent
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is kicking off a run[0m
+[2025-10-09 19:41:42 -0700] [Agents] [INFO] [40m[36m[Scanner Agent] Scanner Agent is about to fetch deals from RSS feed[0m
+[2025-10-09 19:43:17 -0700] [Agents] [INFO] [40m[36m[Scanner Agent] Scanner Agent received 49 deals not already scraped[0m
+[2025-10-09 19:43:17 -0700] [Agents] [INFO] [40m[36m[Scanner Agent] Scanner Agent is calling OpenAI using Structured Output[0m
+[2025-10-09 19:43:36 -0700] [Agents] [INFO] HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+[2025-10-09 19:43:36 -0700] [Agents] [INFO] [40m[36m[Scanner Agent] Scanner Agent received 5 selected deals with price>0 from OpenAI[0m
+[2025-10-09 19:43:36 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is pricing up a potential deal[0m
+[2025-10-09 19:43:36 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Running Ensemble Agent - collaborating with specialist, frontier and random forest agents[0m
+[2025-10-09 19:43:36 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is calling remote fine-tuned model[0m
+[2025-10-09 19:44:16 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent completed - predicting $54.00[0m
+[2025-10-09 19:44:16 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is performing a RAG search of the Chroma datastore to find 5 similar products[0m
+[2025-10-09 19:44:17 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent has found similar products[0m
+[2025-10-09 19:44:17 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is about to call gpt-4o-mini with context including 5 similar products[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent completed - predicting $39.99[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is starting a prediction[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent completed - predicting $92.89[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Ensemble Agent complete - returning $68.79[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has processed a deal with discount $55.79[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is pricing up a potential deal[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Running Ensemble Agent - collaborating with specialist, frontier and random forest agents[0m
+[2025-10-09 19:44:18 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is calling remote fine-tuned model[0m
+[2025-10-09 19:44:19 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent completed - predicting $299.00[0m
+[2025-10-09 19:44:19 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is performing a RAG search of the Chroma datastore to find 5 similar products[0m
+[2025-10-09 19:44:19 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent has found similar products[0m
+[2025-10-09 19:44:19 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is about to call gpt-4o-mini with context including 5 similar products[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent completed - predicting $231.99[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is starting a prediction[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent completed - predicting $170.45[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Ensemble Agent complete - returning $303.33[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has processed a deal with discount $214.33[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is pricing up a potential deal[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Running Ensemble Agent - collaborating with specialist, frontier and random forest agents[0m
+[2025-10-09 19:44:20 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is calling remote fine-tuned model[0m
+[2025-10-09 19:44:22 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent completed - predicting $950.00[0m
+[2025-10-09 19:44:22 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is performing a RAG search of the Chroma datastore to find 5 similar products[0m
+[2025-10-09 19:44:22 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent has found similar products[0m
+[2025-10-09 19:44:22 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is about to call gpt-4o-mini with context including 5 similar products[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent completed - predicting $799.99[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is starting a prediction[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent completed - predicting $236.10[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Ensemble Agent complete - returning $924.27[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has processed a deal with discount $-995.73[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is pricing up a potential deal[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Running Ensemble Agent - collaborating with specialist, frontier and random forest agents[0m
+[2025-10-09 19:44:26 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is calling remote fine-tuned model[0m
+[2025-10-09 19:44:28 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent completed - predicting $189.00[0m
+[2025-10-09 19:44:28 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is performing a RAG search of the Chroma datastore to find 5 similar products[0m
+[2025-10-09 19:44:28 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent has found similar products[0m
+[2025-10-09 19:44:28 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is about to call gpt-4o-mini with context including 5 similar products[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent completed - predicting $129.99[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is starting a prediction[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent completed - predicting $297.73[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Ensemble Agent complete - returning $171.35[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has processed a deal with discount $122.35[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent is pricing up a potential deal[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Running Ensemble Agent - collaborating with specialist, frontier and random forest agents[0m
+[2025-10-09 19:44:29 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent is calling remote fine-tuned model[0m
+[2025-10-09 19:44:30 -0700] [Agents] [INFO] [40m[31m[Specialist Agent] Specialist Agent completed - predicting $599.00[0m
+[2025-10-09 19:44:30 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is performing a RAG search of the Chroma datastore to find 5 similar products[0m
+[2025-10-09 19:44:30 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent has found similar products[0m
+[2025-10-09 19:44:30 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent is about to call gpt-4o-mini with context including 5 similar products[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[34m[Frontier Agent] Frontier Agent completed - predicting $599.99[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent is starting a prediction[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[35m[Random Forest Agent] Random Forest Agent completed - predicting $286.26[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[33m[Ensemble Agent] Ensemble Agent complete - returning $607.17[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has processed a deal with discount $367.17[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has identified the best deal has discount $367.17[0m
+[2025-10-09 19:44:33 -0700] [Agents] [INFO] [40m[37m[Messaging Agent] Messaging Agent is sending a push notification[0m
+[2025-10-09 19:44:34 -0700] [Agents] [INFO] [40m[37m[Messaging Agent] Messaging Agent has completed[0m
+[2025-10-09 19:44:34 -0700] [Agents] [INFO] [40m[32m[Planning Agent] Planning Agent has completed a run[0m
+[2025-10-09 19:44:34 -0700] [Agents] [INFO] Planning Agent has completed and returned: deal=Deal(product_description='The Roborock Q5 DuoRoller+ Self-Empty Robot Vacuum combines powerful suction with smart technology for effortless cleaning. With 5500Pa suction power and a 240-minute run time in Quiet Mode, it effectively tackles dirt and debris. The 26-ounce dustbin capacity allows for extensive cleaning without the need for constant emptying.', price=240.0, url='https://www.dealnews.com/Roborock-Q5-Duo-Roller-Self-Empty-Robot-Vacuum-for-240-free-shipping/21774376.html?iref=rss-f1912') estimate=607.1678443008739 discount=367.16784430087387
