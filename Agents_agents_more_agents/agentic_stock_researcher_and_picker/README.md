@@ -12,5 +12,5 @@ This is an agentic Crew project, powered by [crewAI](https://crewai.com). This p
 
 * **manager**: Oversees the workflow, delegating tasks among the other agents to ensure the final result is a well-reasoned investment recommendation.
 
-## The final output looks as follows in gradio:
+## The push notifications of the selected stock for sector `Technology`:
 ![UI Screenshot](../../images/stock_picking_notifications.png)
