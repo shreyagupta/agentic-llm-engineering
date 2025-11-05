@@ -15,5 +15,5 @@ Creates a simple Gradio UI that demonstrates how the backend module works. They 
  ### 4) Test Engineer
 Writes unit tests for the backend module to ensure correctness and reliability. They create a test_{module_name}.py file that verifies the backend behaves as expected.
 
-## The final outpout looks as follows in gradio:
+## The final output looks as follows in gradio:
 ![UI Screenshot](../../images/engineering_team_trading_ui.png)
