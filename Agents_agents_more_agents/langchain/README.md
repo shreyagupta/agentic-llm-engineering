@@ -95,16 +95,16 @@ The result is a flexible, extensible agent capable of performing real tasks—no
 # Example Outputs
 
 ## 1a) Asking agent to comput pi*3
-![compute_pi_times_3](../../../images/langchain_sidekick_compute_pi.png)
+![compute_pi_times_3](../../images/langchain_sidekick_compute_pi.png)
 
 ## 1b) Trace showing evaluator giving feedback and agent improving its calculation of pi  
-![compute_pi_times_3_trace](../../../images/langchain_trace_for_sidekick_showing_evaluator_feedback.png)
+![compute_pi_times_3_trace](../../images/langchain_trace_for_sidekick_showing_evaluator_feedback.png)
 
 ## 2a) Asking agent to find the best thai restaurants in SF, persist a report in `dinner.md` and send me push notification with the name and number of the top restaurant.
-![top_thai_report](../../../images/langchain_sidekick_restaurant_update_summary.png)
+![top_thai_report](../../images/langchain_sidekick_restaurant_update_summary.png)
 
 ## 2b) Asking agent to update the report in dinner.md with a summary of the reviews and menu items
-![top_thai_report_updated](../../../images/langchain_sidekick_restaurant_summary_updated.png)
+![top_thai_report_updated](../../images/langchain_sidekick_restaurant_summary_updated.png)
 
 ## 2c) push notification
-![top_thai_report_push](../../../images/langchain_push_notification_for_restaurant.png)
+![top_thai_report_push](../../images/langchain_push_notification_for_restaurant.png)
